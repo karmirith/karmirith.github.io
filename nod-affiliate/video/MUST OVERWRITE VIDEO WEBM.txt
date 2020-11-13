@@ -1,0 +1,3 @@
+Want to change the video file for this?
+
+You must override the file video.webm to replace it in your lower third.
