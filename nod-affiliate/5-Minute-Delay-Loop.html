@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nerd or Die Loop</title>
+	<style type="text/css">
+		html,body{
+			margin: 0;
+			padding: 0;
+		}
+		#vid {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<video id="vid" muted>
+    	<source src="video/video.webm" type="video/webm">
+  	</video>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+	<script type="text/javascript">
+		var delayMins = 5; // how many minutes you want this to be delays
+
+		var delayTime = delayMins * 60;
+
+		var tl = new TimelineMax({repeat: -1});
+		tl.to("body", .1, {opacity: 1, delay: delayTime, onComplete: playVid});
+
+		playVid();
+
+		function playVid() {
+			var vid = document.getElementById("vid");
+			vid.pause();
+			vid.currentTime = 0;
+			vid.play();
+		}
+	</script>
+</body>
+</html>
